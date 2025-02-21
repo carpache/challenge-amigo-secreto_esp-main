@@ -20,9 +20,55 @@ function agregarAmigo (){
 
      }
 
+}
 
 
+function limpiarCampo (){
+   document.getElementById("amigo").value = "";
+   
+}
 
+function listaDeAmigos(){
+  let listaAmigos = document.getElementById("listaAmigos");
+  listaAmigos.innerHTML = "";
 
+  for ( let i = 0; i<amigos.length; i++ ){
+      let nuevoElemento = document.createElement("li");
+      nuevoElemento.textContent = amigos[i];
+      listaAmigos.appendChild(nuevoElemento);
+  }
+
+ 
 
 }
+
+
+function sortearAmigo(){
+ if( amigos.length > 0){
+
+let amigosAleatorios  = Math.floor(Math.random()*amigos.length);
+  let amigosSorteados = amigos[amigosAleatorios] ;
+
+ const resultado = document.getElementById('resultado');
+ resultado.innerHTML = `amigos sorteados :<strong>${amigosSorteados}</strong>`;
+ 
+  
+
+  listaDeAmigos();
+
+ limpiarCampo();
+
+
+ }
+ 
+ 
+}
+
+function actualizarLista() {
+ let listaActualizadaAmigos = document.getElementById("listaAmigo");
+ listaActualizadaAmigos.innerHTML = "";
+
+
+ 
+}
+
